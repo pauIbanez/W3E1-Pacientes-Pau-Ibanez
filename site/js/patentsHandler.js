@@ -20,17 +20,6 @@ const patientsHandler = (patients) => {
     0
   );
 
-  // const women = patients.filter(
-  //   (patientSheet) => patientSheet.patient.sexo === "W"
-  // );
-
-  // returnedObject.averageAgeWomen = parseInt(
-  //   (
-  //     women.reduce((acc, patientSheet) => acc + patientSheet.patient.age, 0) /
-  //     women.length
-  //   ).toFixed(0),
-  //   10
-  // );
   returnedObject.averageAgeWomen = patients
     .filter((patientSheet) => patientSheet.patient.sexo === "W")
     .reduce((acc, patientSheet, currentIndex, array) => {
