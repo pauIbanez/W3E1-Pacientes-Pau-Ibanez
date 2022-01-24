@@ -1,9 +1,11 @@
+import patientsHandler from "./patentsHandler.js";
+
 const pateients = [
   {
     patient: {
       name: "Luis",
       age: 25,
-      sex: "M",
+      sexo: "M",
     },
     daysInHospital: 3,
     diet: "Low fiber",
@@ -54,3 +56,5 @@ const pateients = [
     diet: "Salt free",
   },
 ];
+
+console.log(patientsHandler(pateients));
