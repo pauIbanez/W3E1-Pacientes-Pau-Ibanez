@@ -96,6 +96,54 @@ describe("Given patientsHandler", () => {
     });
   });
 
+  describe("When inputed 4 peoplewith a total days in hospital of 13", () => {
+    test("Then it should return 13 as the total number of days in hospital", () => {
+      const inputPatients = [
+        {
+          patient: {
+            name: "Marta",
+            age: 20,
+            sexo: "W",
+          },
+          daysInHospital: 5,
+          diet: "Diabetes",
+        },
+        {
+          patient: {
+            name: "Esteban",
+            age: 40,
+            sexo: "M",
+          },
+          daysInHospital: 3,
+          diet: "Diabetes",
+        },
+        {
+          patient: {
+            name: "Esteban",
+            age: 15,
+            sexo: "M",
+          },
+          daysInHospital: 1,
+          diet: "Diabetes",
+        },
+        {
+          patient: {
+            name: "Paca",
+            age: 20,
+            sexo: "W",
+          },
+          daysInHospital: 4,
+          diet: "Low fiber",
+        },
+      ];
+      const expectedTotalDaysInHospital = 13;
+
+      const result = patientsHandler(inputPatients);
+
+      expect(result.totalDaysInHospital).toBe(expectedTotalDaysInHospital);
+    });
+  });
+
   describe("When inputed 4 people of which 3 are adults", () => {
     test("Then it should return 3 as the number of adults", () => {
       const inputPatients = [
